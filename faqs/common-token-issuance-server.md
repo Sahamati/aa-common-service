@@ -55,6 +55,6 @@ The actual 24-hour access token is granted when these credentials are passed thr
 
 Each token issued has a lifespan of only 24 hours. Tokens have to be procured every 24 hours by each API client.
 
-What are the other attributes of the token issued?
+### What are the other attributes of the token issued?
 
 The token is issued in JSON Web Token format. See reference [Access Token Schema](../reference/access-token-schema.md).

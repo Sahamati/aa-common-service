@@ -20,15 +20,15 @@ In the **Authorization tab** for a request or collection, set the following deta
 6. **Scope** as `openid`.
 7. **Client Authentication** as `Send as Basic Auth Header`.
 
-Decoding the Access Token
+### Decoding the Access Token
 
-Using **jwt.io **
+#### Using **jwt.io **
 
 {% hint style="info" %}
 Any popular JWT decoder tool available online can be used, please ensure that the tool is safe and secure. Compromised access tokens can allow unauthorized access.
 {% endhint %}
 
-Visit jwt.io and paste your access token to see the claims.
+Visit https://jwt.io and paste your access token to see the claims.
 
 The decoded access token will have the following structure for Header and Payload:
 
@@ -59,4 +59,4 @@ The decoded access token will have the following structure for Header and Payloa
 }
 ```
 
-Refer [Access Token Schema](../reference/access-token-schema.md) for more details.
+Refer to [Access Token Schema](../reference/access-token-schema.md) for more details.
