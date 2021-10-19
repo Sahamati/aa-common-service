@@ -22,3 +22,6 @@
 ## Reference
 
 * [Access Token Schema](reference/access-token-schema.md)
+* [CR FIP Schema](reference/cr-fip-schema.md)
+* [CR FIU Schema](reference/cr-fiu-schema.md)
+* [CR AA Schema](reference/cr-aa-schema.md)
