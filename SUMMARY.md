@@ -3,6 +3,11 @@
 * [Overview](README.md)
 * [Integrating Common Service](integrating-common-service.md)
 
+## Central Registry
+
+* [Overview](central-registry/overview.md)
+* [CR API Details](central-registry/cr-api-details.md)
+
 ## Token Service Guide <a href="token-service" id="token-service"></a>
 
 * [Access Token Logistics](token-service/access-token-logistics.md)
