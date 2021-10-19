@@ -43,7 +43,7 @@ To facilitate easy, secure availability of the above information, the ecosystem 
 
 The above needs of API providers and clients are mapped to the features of this common service as follows:
 
-| Feature                                           |                      |
+| Feature                                           | Service              |
 | ------------------------------------------------- | -------------------- |
 | API endpoints of clients and providers            | Central Registry API |
 | Public keys of clients and providers              | Central Registry API |
