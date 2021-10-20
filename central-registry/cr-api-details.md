@@ -1,5 +1,11 @@
 # CR API Details
 
+The Central Registry API can be accessed using the following URL format:
+
+> #### https://\<path-to-cr>.sahamati.org.in/entityInfo/**{Entity\_Type}**
+
+The _`<path-to-cr>`_ varies for UAT/PROD environments and can be requested from Sahamati services.&#x20;
+
 The Central Registry API can be used by the caller to fetch the details of all entities, subject to restrictions based on the role of the API caller (as per the role in the identity token).
 
 API callers that present an identity `token.roles = AA` will be able to fetch details of all FIPs and FIUs (but not that of other AAs). If the request is for `Entity_type = AA`, they will get their own details only in the response.
