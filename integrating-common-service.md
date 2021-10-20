@@ -11,6 +11,12 @@ The following are the IT activities that have to be performed by AA ecosystem me
 
 ## Provide public API endpoints and public key information
 
+Refer to Central Registry schemas listed below for each entity role while providing details:
+
+1. [FIP Entity Schema](reference/cr-fip-schema.md)
+2. [FIU Entity Schema](reference/cr-fiu-schema.md)
+3. [AA Entity Schema](reference/cr-aa-schema.md)
+
 ### For UAT environment
 
 The authorized representative of the AA member organization, or a member of the Technology Service Provider that the AA member has contracted with, can send UAT API endpoints and public key information to `services (at) sahamati (dot) org (dot) in`.
@@ -39,5 +45,5 @@ Authorized representatives can then configure such information in their producti
 
 ## Notes
 
-1. Emails from Sahamati will also contain the URL for the Sahamati Public Key to be accessed. The same is to be used by AA member organizations, to fetch the Sahamati public key and configure in its systems, to validate tokens presented by API clients connecting to the member organization.
+1. Emails from Sahamati will also contain the URL for the Sahamati Public Key to be accessed. The same is to be used by AA member organizations, to fetch the Sahamati public key and configure it in their systems, and to validate tokens presented by API clients connecting to the member organization.
 2. URL(s) to common service features will be shared along in the email if requested.
