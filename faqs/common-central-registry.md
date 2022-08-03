@@ -16,7 +16,7 @@ The Central Registry is a common service that facilitates this automated discove
 
 ### What are the criteria to get listed in the Central Registry?
 
-To be listed in the Central Registry, the entity (AA, FIP, or FIU) must be certified as having a standards-compliant API implementation in place.
+To be listed in the Central Registry, we recommend the entity (AA, FIP, or FIU) be certified as having a standards-compliant API implementation in place.
 
 The [Sahamati Certification Framework](https://app.gitbook.com/s/-MjQh9gCESKBasLLyTg3/) provides this guarantee.
 
