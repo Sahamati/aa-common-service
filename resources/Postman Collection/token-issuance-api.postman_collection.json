@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "c12a072a-fd36-402a-aa98-f61db642f5af",
+		"name": "token-issuance-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18847258"
+	},
+	"item": [
+		{
+			"name": "obtain-token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "FEcTvIbi6QOBGfeRwNA94g92lf7t3hMa",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sahamati-admins",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://id.sahamati.org.in/auth/realms/dev-sahamati/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"id",
+						"sahamati",
+						"org",
+						"in"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"dev-sahamati",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,121 @@
+openapi: 3.0.2
+info:
+  title: Sahamati Token issuance service - OpenAPI 3.0
+  description: "The OpenAPI documentation for Sahamati's Token Issuance service"
+  contact:
+    email: services@sahamati.org.in
+  version: 1.0.15
+tags:
+  - name: token
+    description: JWT
+servers:
+  - url: https://tokens.sahamati.org.in/auth/realms/sahamati/protocol/openid-connect
+    description: Production
+  - url: https://uattokens.sahamati.org.in/auth/realms/sahamati/protocol/openid-connect
+    description: UAT
+paths:
+  /token:
+    post:
+      summary: "Get the authorization JWT from the resource server "
+      tags:
+        - "token"
+      parameters:
+      - name: "Content-type"
+        in: "header"
+        required: true
+        schema:
+          type: "string"
+          enum:
+            - "application/x-www-form-urlencoded"
+      - name: "Authorization"
+        in: "header"
+        required: true
+        description: The base64 encoding of the clientid and client secret seperated by a colon (:) preceded by the word 'Basic'
+        schema:
+          type: "string"
+          # description: The Client secret shared by Sahamati, preced by the word 'Basic'
+          example: Basic duf832yfh823hiu
+      requestBody:
+        description: The data which will be used to authenticate the user
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenErrorResponse'
+        "401":
+          description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenErrorResponse'
+        "500":
+          description: "Internal server error"
+components:
+  schemas:
+    TokenRequest:
+      type: object
+      properties:
+        grant_type:
+          type: string
+          enum:
+            - client_credentials
+          description: Fixed value of 'client_credentials'
+        scope:
+          type: string
+          enum:
+            - openid
+          description: Fixed value of 'openid'
+      required: [grant_type]
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: number
+        scope:
+          type: string
+        id_token:
+          type: string
+        refresh_expires_in:
+          type: string
+        not-before-policy:
+          type: string
+      required:
+        - access_token
+        - token_type
+        - expires_in
+    TokenErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: error code.
+          enum:
+            - invalid_request
+            - invalid_client
+            - invalid_grant
+            - unauthorized_client
+            - unsupported_grant_type
+            - invalid_scope
+            - invalid_dpop_proof
+        error_description:
+          type: string
+          description: describes the error
+        error_uri:
+          type: string
+      required: [error]
