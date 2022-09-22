@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "93459498-a8bb-4dc2-bc16-376bd37a2dd8",
+		"name": "CR - Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18847258"
+	},
+	"item": [
+		{
+			"name": "Client / Get by type & ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CR_API}}/entityInfo/:type/:id",
+					"host": [
+						"{{CR_API}}"
+					],
+					"path": [
+						"entityInfo",
+						":type",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "FIU",
+							"description": "One of AA,FIU,FIP"
+						},
+						{
+							"key": "id",
+							"value": "INDUSIND",
+							"description": "Identifier for the entity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client / Get - FIP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CR_API}}/entityInfo/:type/",
+					"host": [
+						"{{CR_API}}"
+					],
+					"path": [
+						"entityInfo",
+						":type",
+						""
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "FIP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client / Get - FIU",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CR_API}}/entityInfo/:type",
+					"host": [
+						"{{CR_API}}"
+					],
+					"path": [
+						"entityInfo",
+						":type"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "FIU"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client / Get - AA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CR_API}}/entityInfo/:type/",
+					"host": [
+						"{{CR_API}}"
+					],
+					"path": [
+						"entityInfo",
+						":type",
+						""
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "AA"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "openid",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{auth.password}}",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{auth.clientSecret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{auth.clientId}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{auth.token-url}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{auth.username}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "{{auth.tokenName}}",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": true,
+				"type": "boolean"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
