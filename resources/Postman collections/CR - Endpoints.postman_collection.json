@@ -141,11 +141,6 @@
 				"type": "string"
 			},
 			{
-				"key": "authUrl",
-				"value": "https://uattokens.sahamati.org.in/auth/realms/sahamati/protocol/openid-connect/auth",
-				"type": "string"
-			},
-			{
 				"key": "accessTokenUrl",
 				"value": "{{auth.token-url}}",
 				"type": "string"
