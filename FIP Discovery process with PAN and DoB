@@ -1,0 +1,31 @@
+## Case 1: User provides Mobile, PAN and DoB
+
+- FIP discovers more than 1 customer records with the mobile number.
+- The FIP aims to resolve the conflict first with the PAN. If it identifies one customer record correctly with the PAN, it generates the Account reference number for the same, sends it back to the AA, and ignores other accounts where the PAN didn’t match.
+- If PAN is unable to resolve the conflict, FIP uses DoB and follows the same step as above.
+- If the conflict is still unresolved, then the FIP needs to send back the HTTP code 404 and the Error Code as “CannotIdentifyCustomer.”
+- If FIP discovers only 1 customer record, it generates the Account reference number for the same and responds appropriately to the AA.
+- If FIP is unable to discover any accounts with the Mobile number (STRONG Identifier), it responds back with the HTTP code 404 and error code as “NoAccountsFound.”
+
+## Case 2: User provides Mobile and PAN only
+
+- FIP discovers more than 1 customer records with the mobile number.
+- The FIP aims to resolve the conflict first with the PAN. If it identifies one customer record correctly with the PAN, it generates the Account reference number for the same, sends it back to the AA, and ignores other accounts where the PAN didn’t match.
+- If PAN is unable to resolve the conflict, then the FIP needs to send back the HTTP code 404 and the Error Code as “CannotIdentifyCustomer.”
+- If FIP discovers only 1 customer record, it generates the Account reference number for the same and responds appropriately to the AA.
+- If FIP is unable to discover any accounts with the Mobile number (STRONG Identifier), it responds back with the HTTP code 404 and error code as “NoAccountsFound.”
+
+## Case 3: User provides Mobile and DoB only
+
+- FIP discovers more than 1 customer records with the mobile number.
+- The FIP aims to resolve the conflict first with the PAN. If it identifies one customer record correctly with the PAN, it generates the Account reference number for the same, sends it back to the AA, and ignores other accounts where the PAN didn’t match.
+- If DoB is unable to resolve the conflict, then the FIP needs to send back the HTTP code 404 and the Error Code as “CannotIdentifyCustomer.”
+- If FIP discovers only 1 customer record, it generates the Account reference number for the same and responds appropriately to the AA.
+- If FIP is unable to discover any accounts with the Mobile number (STRONG Identifier), it responds back with the HTTP code 404 and error code as “NoAccountsFound.”
+
+## Case 4: User provides only Mobile
+
+- FIP discovers more than 1 customer records with the mobile number.
+- In the absence of any additional identifiers, the FIP needs to send back the HTTP code 404 and the Error Code as “CannotIdentifyCustomer.”
+- If FIP discovers only 1 customer record, it generates the Account reference number for the same and responds appropriately to the AA.
+- If FIP is unable to discover any accounts with the Mobile number (STRONG Identifier), it responds back with the HTTP code 404 and error code as “NoAccountsFound.”
